@@ -1,0 +1,21 @@
+.outerDimension {
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transform: rotateX(60deg) perspective(600px);
+          transform: rotateX(60deg) perspective(600px); }
+
+.innerDimension {
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  -webkit-transform-origin: 50% 50%;
+      -ms-transform-origin: 50% 50%;
+          transform-origin: 50% 50%; }
+
+.thickness {
+  -webkit-transition: all 0.1s linear;
+          transition: all 0.1s linear; }

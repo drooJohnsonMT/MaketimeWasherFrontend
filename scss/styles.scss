@@ -1,0 +1,69 @@
+@import "mtVars";
+@import "mixins";
+@import "form";
+@import "buttons";
+@import "visualization-svg-styles";
+@import "spinner";
+
+html,body{
+	margin-right:0;
+}
+body{
+	background-color:rgb(225,225,225);
+}
+.col-xs-6{
+	@media(max-width:460px){
+		width:100%;
+	}
+}
+.mt-maker-form-wrapper{
+	@include mt-box-shadow(2);
+	background-color:white;
+	padding:20px;
+	display: block;
+}
+
+input[type="number"]{
+	padding-right:3px;
+}
+
+.form-group#timeNeededBlock{
+	input{
+		width:(100%/3);
+		padding-left:10px;
+		padding-right:3px;
+	}
+}
+
+.message-modal-bg{
+	transition:all 0.25s;
+	height:100%;
+	width:100%;
+	position:relative;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:1000;
+	background-color:rgba(0,0,0,0.7);
+}
+.message-modal-body{
+	padding:20px;
+	button{
+		margin-top:20px;
+		margin-bottom:0;
+	}
+	position:absolute;
+	top:50%;
+	text-align:center;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:50%;
+	margin:auto;
+	z-index:2000;
+	background-color:white;
+	@include mt-box-shadow(3);
+}
+.message-modal-bg.ng-hide{
+	opacity:0;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mtMaker" ng-controller="GrommetMakerCtrl">
+
+<head>
+  <meta charset="UTF-8">
+  <title ng-bind="pageTitle"></title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>  
+  <script src="bower_components/angular-animate/angular-animate.min.js" type="text/javascript" charset="utf-8"></script><script src="https://code.angularjs.org/1.3.15/angular-sanitize.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="bower_components/moment/min/moment.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/app/js/jquery-duration-entry.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/app/app.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/app/controllers/GrommetMakerCtrl.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/app/directives/configurator.js" type="text/javascript" charset="utf-8"></script>
+
+
+<body>
+  <div ng-show="messages" class="message-modal-bg">
+      <div class="message-modal-body"><p>
+        {{messages}}
+      </p><button class="btn-block btn-primary" ng-click="dismiss()">{{buttonText}}</button></div>
+    </div>
+    <div class="container">
+      <div class="row">
+      <div class="col-xs-12" style="text-align:center;">
+      <button ng-disabled="!isConfigurable" ng-click="isConfigurable = false">Static</button> | <button ng-disabled="isConfigurable" ng-click="isConfigurable = true">Custom</button>
+      </div>
+    </div>
+    </div>
+  <div class="container">
+    <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-1 mt-maker-form-wrapper clearfix">
+    <div class="row" id="configurator-form" ng-show="isConfigurable" form-grommet>
+      
+    </div>
+    <div class="row" id="configurator-form" ng-show="!isConfigurable" static-grommet>
+      
+    </div>
+  </div>
+  </div>
+</body>
+
+<!-- TODO: ADD SIGNUP MODAL ON REQUEST FAILURE -->
+<footer>
+  <div style="clear:both">
+    
+  </div>
+</footer>
+</html>

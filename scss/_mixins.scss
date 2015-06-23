@@ -1,0 +1,53 @@
+@mixin mt-box-shadow($level, $inset:false){
+  $sh-x: 0;
+  $sh-y: (20px * ($level / 5));
+  $sh-blur: ($sh-y* 1.25);
+  $sh-choke: $sh-blur * -0.35;
+  $sh-opacity: 0.1 + (0.4 / ($level + 1));
+  @if $inset == false {    
+    box-shadow:$sh-x $sh-y $sh-blur $sh-choke rgba(0,0,0,$sh-opacity);
+  } @else {    
+    box-shadow:inset $sh-x $sh-y $sh-blur $sh-choke rgba(0,0,0,$sh-opacity);
+  }
+}
+
+@mixin base-shadow(){
+  box-shadow:0 0 1px -2px rgba(0,0,0,0.5);
+}
+
+// Font mixins set up the font-family, letter-spacing, font-weight, etc.
+
+@mixin din($weight){
+  letter-spacing:0.05em;
+  font-family:$din;
+  font-weight:$weight;
+}
+
+@mixin proxima($weight){
+  letter-spacing:auto;
+  font-family:$proxima;
+  font-weight:$weight;
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color) {
+  // For Google Chrome
+  ::-webkit-scrollbar {
+      border-bottom-width:0;
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

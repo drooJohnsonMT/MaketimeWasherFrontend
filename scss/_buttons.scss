@@ -1,0 +1,79 @@
+$green: #00e8b3;
+$transition-time:0.2s;
+$click-time:0.1s;
+
+
+button.btn-grey{
+  background-color:$grey-light;
+  border-color:$grey-light;
+  &:hover,&:focus{
+    border-color:$grey;
+  }
+  &:active{
+    color:$grey-dark;
+    background-color:darken($grey-light,5);
+    border-color:darken($grey-light,5);
+  }
+}
+button.btn-ghost{
+  background-color:transparent;
+  color:$green;
+  &:hover,&:focus{
+    background-color:$green;
+    color:$grey-darker;
+  }
+  &:active{
+    color:$grey-dark;  
+    background-color:darken($green,5);
+    border-color:darken($green,5);
+  }
+}
+button.btn-primary{
+  background-color:$green;
+  border: solid 3px $green;
+  &:hover,&:focus{
+    border-color:$green;
+    background-color:darken($green,5);
+  }
+  &:active{
+    color:$grey-dark;
+    background-color:darken($green,5);
+    border-color:darken($green,5);
+  }
+}
+button{
+  @include din(bold);
+  text-transform: uppercase;
+  font-size:1.6rem;
+  box-sizing:padding-box;
+  transition:color $transition-time ease-in-out, background-color $transition-time ease-in-out, border-color $transition-time ease-in-out, border-width $transition-time ease-in-out, padding $transition-time ease-in-out;
+  //display:table-cell;
+  min-width:110px;
+  padding:9px 17px 9px 17px;
+  appearance:none;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+button:focus{
+  outline:none;
+}
+button.btn-sm{
+  font-size:1.4rem;
+  padding-top:7px;
+  padding-bottom:7px;
+  &:active{
+    padding-top:9px;
+    padding-bottom:9px;
+  }
+}
+button.btn-lg{
+  font-size:1.8rem;
+  padding-top:11px;
+  padding-bottom:11px;
+}
+
+#buttonText{
+  font-family:"DINOT-Cond";
+  font-weight:bold;
+  //font-size:$h4-size;
+}

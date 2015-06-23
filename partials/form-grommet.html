@@ -1,0 +1,29 @@
+<div class="col-sm-6" id="visualization-window" viz-grommet>
+
+</div>
+<form name="grommetForm" class="col-sm-6">
+  <div class="form-group">
+    <label for="inner-dimension">Inner Dimension (mm)</label>
+    <input type="number" class="form-control" id="innerDimension" ng-model="grommet.innerDimension" placeholder="Inner Dimension">
+  </div>
+  <div class="form-group">
+    <label for="outer-dimension">Outer Dimension (mm)</label>
+    <input type="number" class="form-control" id="outer-dimension" ng-model="grommet.outerDimension" placeholder="Outer Dimension">
+  </div>
+  <div class="form-group">
+    <label for="thickness">Thickness (mm)</label>
+    <input type="number" class="form-control" id="thickness" ng-model="grommet.thickness" placeholder="Thickness">
+  </div>
+  <div class="form-group">
+    <label for="material">Material</label>
+    <select name="material" id="material" class="form-control" ng-model="grommet.material" ng-options="material.name for material in materials">
+    </select>
+  </div>
+  <button type="submit" class="btn-primary" data-ng-click="submit(grommetForm)"><span ng-bind-html="submitButtonContent"></span></button>
+
+<script type="text/javascript">
+    $(document).ready( function(){
+      $(".duration").durationEntry();
+    });
+</script>
+</form>
